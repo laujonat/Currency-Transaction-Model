@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 // import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
-import Root from './components/app';
-import rootReducer from './reducers/index';
+import Root from './components/root';
+import rootReducer from './reducers/rootReducer';
 
 // import App from './components/app';
 // import reducers from './reducers';
