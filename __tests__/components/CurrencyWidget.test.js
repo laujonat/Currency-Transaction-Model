@@ -12,6 +12,8 @@ describe('<CurrencyWidget />', () => {
       const wrapper = shallow(<CurrencyWidget />).dive();
       console.log(wrapper);
       expect(wrapper.exists().to.equal(false));
+
+      "hi jon"
     });
   });
 
