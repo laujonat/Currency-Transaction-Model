@@ -9,10 +9,9 @@ import CurrencyWidget from '../../src/components/CurrencyWidget';
 describe('<CurrencyWidget />', () => {
   describe('render()', () => {
     test('renders currency widget', () => {
-      const wrapper = shallow(<CurrencyWidget />);
-      // const component = wrapper.dive();
-
-      expect(toJson(wrapper)).toMatchSnapshot();
+      const wrapper = shallow(<CurrencyWidget />).dive();
+      console.log(wrapper);
+      expect(wrapper.exists().to.equal(false));
     });
   });
 

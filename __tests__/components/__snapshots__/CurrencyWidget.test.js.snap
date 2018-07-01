@@ -1,5 +1,0 @@
-exports[`<CurrencyWidget /> render() renders currency widget 1`] = `
-<div>
-  \"hi\"
-</div>
-`;
