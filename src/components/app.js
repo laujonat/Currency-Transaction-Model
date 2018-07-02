@@ -7,7 +7,6 @@ export default class App extends Component {
       <div>
         <h1>HI JON</h1>
         <CurrencyWidget />
-        <CurrencyWidget />
       </div>
     );
   }
