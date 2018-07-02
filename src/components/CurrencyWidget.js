@@ -84,7 +84,7 @@ class CurrencyWidget extends Component {
 
     return (
       <form>
-        <p>1 {this.state.currencyType1} is equal to {this.state.rate1To2} {this.state.currencyType2}.</p>
+        <span>1 {this.state.currencyType1} is equal to {this.state.rate1To2} {this.state.currencyType2}.</span>
         <div className="inputSection">
           <input
             type='number'
