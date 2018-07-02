@@ -71,18 +71,11 @@ export default class CurrencyWidget extends Component {
     );
   }
 
-  currencyChange(field) {
-    return (
-      (e) => {
-        e.preventDefault();
-        this.setState({ [field]: e.target.value}, () => {
-          this.getRates(this.state.currencyType1, this.state.currencyType2);
-          // dispatch action
-          // return back is conversion rate
-          // do calculation from currencyAmount1 to currencyAmount2
-        });
-      }
-    );
+  currencyChange(e) {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value }, () => {
+      this.getRates(this.state.currencyType1, this.state.currencyType2);
+    });
   }
 
   render() {
@@ -98,7 +91,8 @@ export default class CurrencyWidget extends Component {
           ></input>
 
           <select
-            onChange={this.currencyChange('currencyType1')}
+            onChange={this.currencyChange}
+            name="currencyType1"
             value={this.state.currencyType1}
           >{dropdown}</select>
         </div>
@@ -110,7 +104,8 @@ export default class CurrencyWidget extends Component {
           ></input>
 
           <select
-            onChange={this.currencyChange('currencyType2')}
+            onChange={this.currencyChange}
+            name="currencyType2"
             value={this.state.currencyType2}
           >{dropdown}</select>
         </div>
