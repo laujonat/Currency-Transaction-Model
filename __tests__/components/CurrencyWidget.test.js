@@ -10,8 +10,8 @@ describe('<CurrencyWidget />', () => {
   describe('render()', () => {
     test('renders currency widget', () => {
       const wrapper = shallow(<CurrencyWidget />);
-      console.log(wrapper);
-      expect(wrapper.exists().to.equal(false));
+
+      expect(wrapper.exists()).toBe(true);
     });
   });
 
