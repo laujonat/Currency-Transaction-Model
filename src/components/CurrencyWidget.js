@@ -53,13 +53,25 @@ export default class CurrencyWidget extends Component {
   }
 
   amountChange(field) {
-    const other = (field === '1') ? '2' : '1';
+    let from;
+    let to;
+    let rate;
+
+    if (field === '1') {
+      from = 'currencyAmount1';
+      to = 'currencyAmount2';
+      rate = this.state.rate1To2;
+    } else {
+      from = 'currencyAmount2';
+      to = 'currencyAmount1';
+      rate = this.state.rate2To1;
+    }
+
     return (
       (e) => {
         // const calc = e.target.value * this.state[`rate${field}To${other}`];
-        console.log(`rate${field}To${other}`);
-        console.log(this.state);
-        console.log(this.state[`rate${field}To${other}`]);
+        console.log(rate);
+        console.log(rate);
         // this.setState({
         //   [`currencyAmount${field}`]: e.target.value,
         //   [`currencyAmount${other}`]: calc
@@ -91,7 +103,7 @@ export default class CurrencyWidget extends Component {
 
         <input
           type='number'
-          onChange={() => console.log("hello")}
+          onChange={this.amountChange('2')}
           value={this.state.currencyAmount2}
         ></input>
 
