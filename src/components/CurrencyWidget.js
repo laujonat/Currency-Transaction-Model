@@ -76,7 +76,7 @@ export default class CurrencyWidget extends Component {
       (e) => {
         e.preventDefault();
         this.setState({ [field]: e.target.value}, () => {
-          console.log(this.state);
+          this.getRates(this.state.currencyType1, this.state.currencyType2);
           // dispatch action
           // return back is conversion rate
           // do calculation from currencyAmount1 to currencyAmount2
