@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import CurrencyDropdown from './CurrencyDropdown';
+
 export default class CurrencyWidget extends Component {
   constructor(props) {
     super(props);
@@ -9,16 +11,23 @@ export default class CurrencyWidget extends Component {
       currencyAmount1: 0,
       currencyAmount2: null,
       rate1To2: null,
-      rate2To1: null,
+      rate2To1: null
     };
 
     this.currencyChange = this.currencyChange.bind(this);
   }
 
   componentDidMount() {
+    const first = this.state.currencyType1;
+    const second = this.state.currencyType2;
+
+    fetch(`/api/v5/convert?q=${first}_${second},PHP_USD&compact=ultra`)
     // call api with this.state.currencyType1, this.state.currencyType2
-    // const conversionRate = ___;
-    // this.setState({ converstionRate });
+      .then(
+        // const conversionRate = ___;
+        // this.setState({ converstionRate });
+
+      )
   }
 
   currencyChange(field) {
@@ -39,6 +48,8 @@ export default class CurrencyWidget extends Component {
   }
 
   render() {
+    const dropdown = <CurrencyDropdown />;
+
     return (
       <form>
         <input
@@ -50,10 +61,19 @@ export default class CurrencyWidget extends Component {
         <select
           onChange={this.currencyChange('currencyType1')}
         >
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+          {dropdown}
+        </select>
+
+        <input
+          type='number'
+          onChange={() => console.log("hello")}
+          placeholder={this.state.currencyAmount2}
+        ></input>
+
+        <select
+          onChange={this.currencyChange('currencyType2')}
+        >
+          {dropdown}
         </select>
 
         <button>fly birdie fly</button>
