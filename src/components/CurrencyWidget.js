@@ -7,6 +7,10 @@ export default class CurrencyWidget extends Component {
   }
 
   render() {
-    return (<div>"hi"</div>);
+    return (
+      <div>
+        <input type='text'></input>
+      </div>
+    );
   }
 }
