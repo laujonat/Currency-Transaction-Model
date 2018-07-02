@@ -22,10 +22,14 @@ export function fetchCurrencies() {
 
   return dispatch => {
     dispatch(fetchCurrenciesBegin());
-    return fetch('https://free.currencyconverterapi.com/api/v5/currencies')
+    return fetch(`${host}api/v5/currencies`)
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
+        const currencyName = Object.values(json.results).forEach(el => {
+          console.log(el);
+        });
+        console.log(currencyName);
         dispatch(fetchCurrenciesSuccess(Object.keys(json.results).sort()));
     })
     .catch(error => dispatch(fetchCurrenciesError(error)));

@@ -7,23 +7,15 @@ import thunk from 'redux-thunk';
 import Root from './components/root';
 import rootReducer from './reducers/rootReducer';
 import { fetchCurrencies } from "./actions/curr_actions";
-// import App from './components/app';
-// import reducers from './reducers';
 
 // const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 document.addEventListener('DOMContentLoaded', () => {
-  // const preloadedState = {
-  //   person1: Math.random(100),
-  //   person2: Math.random(100)
-  // };
-
   const store = createStore(
     rootReducer,
-    // preloadedState,
     applyMiddleware(thunk, logger)
   );
-
+  store.dispatch(fetchCurrencies());
   window.fetchCurrencies = fetchCurrencies;
   window.getState = store.getState;
   window.dispatch = store.dispatch;

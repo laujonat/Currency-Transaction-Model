@@ -1,21 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const currencies = ['USD', 'BTC'];
-
-const dropdown = function({ active }) {
-  // return currencies.map((curr) => {
-  //   if (curr === active) {
-  //     return <option defaultValue={curr}>curr</option>;
-  //   } else {
-  //     return <option value={curr}>curr</option>;
-  //   }
-  // });
-  return (
-    <React.Fragment>
-      <option value='USD'>USD</option>
-      <option value='BTC'>BTC</option>
-    </React.Fragment>
-  );
+const dropdown = function({ currencies }) {
+  return currencies.map((curr, idx) => <option key={idx} value={curr}>{curr}</option>);
 };
 
-export default dropdown;
+
+const mapStateToProps = state => ({
+  currencies: state.currencies.curr,
+});
+
+export default connect(mapStateToProps)(dropdown);
