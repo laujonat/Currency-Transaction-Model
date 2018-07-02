@@ -1,0 +1,20 @@
+body {
+  background-color: blue;
+
+}
+
+form {
+  height: 100px;
+  width: 100px;
+}
+
+input {
+  border: 1px solid gray;
+}
+
+button {
+  background-color: orange;
+  width: auto;
+  margin: auto;
+  border-radius: 5px;
+}
