@@ -12,8 +12,7 @@ describe('<App />', () => {
   describe('render()', () => {
     test('renders two currency widgets', () => {
       const wrapper = shallow(<App />);
-      console.log(wrapper);
-      expect(wrapper.find(CurrencyWidget).to.have.length(2));
+      expect(wrapper.find(CurrencyWidget)).toHaveLength(2);
     });
   });
 });
