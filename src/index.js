@@ -6,7 +6,7 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import Root from './components/root';
 import rootReducer from './reducers/rootReducer';
-import { fetchCurrenciesSuccess } from "./actions/curr_actions";
+import { fetchCurrencies } from "./actions/curr_actions";
 // import App from './components/app';
 // import reducers from './reducers';
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyMiddleware(thunk, logger)
   );
 
-  window.fetchCurrenciesSuccess = fetchCurrenciesSuccess;
+  window.fetchCurrencies = fetchCurrencies;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
