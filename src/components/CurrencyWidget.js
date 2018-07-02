@@ -27,16 +27,16 @@ class CurrencyWidget extends Component {
 
   }
 
-  getRates(curr1, curr2) {
+  getRates(c1, c2) {
     const host = 'http://free.currencyconverterapi.com/';
 
-    fetch(`${host}api/v5/convert?q=${curr1}_${curr2},${curr2}_${curr1}&compact=ultra`)
+    fetch(`${host}api/v5/convert?q=${c1}_${c2},${c2}_${c1}&compact=ultra`)
       .then((response) => {
         return response.json();
       })
       .then((json) => {
-        const oneToTwo = curr1 + "_" + curr2;
-        const twoToOne = curr2 + "_" + curr1;
+        const oneToTwo = c1 + "_" + c2;
+        const twoToOne = c2 + "_" + c1;
 
         this.setState({
           rate1To2: json[oneToTwo],
