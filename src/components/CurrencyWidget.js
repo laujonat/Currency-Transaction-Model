@@ -16,20 +16,26 @@ export default class CurrencyWidget extends Component {
 
     this.amountChange = this.amountChange.bind(this);
     this.currencyChange = this.currencyChange.bind(this);
+    this.getRates = this.getRates.bind(this);
   }
 
   componentDidMount() {
     const first = this.state.currencyType1;
     const second = this.state.currencyType2;
+
+    this.getRates(first, second);
+  }
+
+  getRates(curr1, curr2) {
     const host = 'http://free.currencyconverterapi.com/';
 
-    fetch(`${host}api/v5/convert?q=${first}_${second},${second}_${first}&compact=ultra`)
+    fetch(`${host}api/v5/convert?q=${curr1}_${curr2},${curr2}_${curr1}&compact=ultra`)
       .then((response) => {
         return response.json();
       })
       .then((json) => {
-        const oneToTwo = first + "_" + second;
-        const twoToOne = second + "_" + first;
+        const oneToTwo = curr1 + "_" + curr2;
+        const twoToOne = curr2 + "_" + curr1;
 
         this.setState({
           rate1To2: json[oneToTwo],
@@ -37,20 +43,6 @@ export default class CurrencyWidget extends Component {
           currencyAmount2: this.state.currencyAmount1 * json[oneToTwo]
         }, () => console.log(this.state));
       });
-  }
-
-  currencyChange(field) {
-    return (
-      (e) => {
-        e.preventDefault();
-        this.setState({ [field]: e.target.value}, () => {
-          console.log(this.state);
-          // dispatch action
-          // return back is conversion rate
-          // do calculation from currencyAmount1 to currencyAmount2
-        });
-      }
-    );
   }
 
   amountChange(field) {
@@ -75,6 +67,20 @@ export default class CurrencyWidget extends Component {
           [from]: e.target.value,
           [to]: e.target.value * rate
         }, () => console.log(this.state));
+      }
+    );
+  }
+
+  currencyChange(field) {
+    return (
+      (e) => {
+        e.preventDefault();
+        this.setState({ [field]: e.target.value}, () => {
+          console.log(this.state);
+          // dispatch action
+          // return back is conversion rate
+          // do calculation from currencyAmount1 to currencyAmount2
+        });
       }
     );
   }
