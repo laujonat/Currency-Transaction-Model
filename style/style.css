@@ -1,15 +1,26 @@
 body {
-  background-color: blue;
-
+  background: linear-gradient(rgb(15, 98, 189) 24%, rgb(10, 64, 122) 168%);
+  width: 100vw;
+  height: 100vh;
 }
 
 form {
-  height: 100px;
-  width: 100px;
+  width: 300px;
+  height: 20vh;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px black;
 }
 
-input {
+input, select {
   border: 1px solid gray;
+  padding: 5px 10px 5px 10px;
+  border-radius: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 button {
@@ -17,4 +28,9 @@ button {
   width: auto;
   margin: auto;
   border-radius: 5px;
+}
+
+.inputSection {
+  display: flex;
+  margin: auto;
 }

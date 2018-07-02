@@ -90,28 +90,30 @@ export default class CurrencyWidget extends Component {
 
     return (
       <form>
-        <input
-          type='number'
-          onChange={this.amountChange('1')}
-          value={this.state.currencyAmount1}
-        ></input>
+        <div className="inputSection">
+          <input
+            type='number'
+            onChange={this.amountChange('1')}
+            value={this.state.currencyAmount1}
+          ></input>
 
-        <select
-          onChange={this.currencyChange('currencyType1')}
-          value={this.state.currencyType1}
-        >{dropdown}</select>
+          <select
+            onChange={this.currencyChange('currencyType1')}
+            value={this.state.currencyType1}
+          >{dropdown}</select>
+        </div>
+        <div className="inputSection">
+          <input
+            type='number'
+            onChange={this.amountChange('2')}
+            value={this.state.currencyAmount2}
+          ></input>
 
-        <input
-          type='number'
-          onChange={this.amountChange('2')}
-          value={this.state.currencyAmount2}
-        ></input>
-
-        <select
-          onChange={this.currencyChange('currencyType2')}
-          value={this.state.currencyType2}
-        >{dropdown}</select>
-
+          <select
+            onChange={this.currencyChange('currencyType2')}
+            value={this.state.currencyType2}
+          >{dropdown}</select>
+        </div>
         <button>fly birdie fly</button>
       </form>
     );
