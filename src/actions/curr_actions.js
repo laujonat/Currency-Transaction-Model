@@ -19,19 +19,14 @@ export const fetchCurrenciesError = error => ({
 
 export function fetchCurrencies() {
   const host = 'http://free.currencyconverterapi.com/';
-  const c1 = 'USD';
-  const c2 = 'BTC';
 
   return dispatch => {
     dispatch(fetchCurrenciesBegin());
-    return fetch(`${host}api/v5/convert?q=${c1}_${c2},${c2}_${c1}&compact=ultra`)
+    return fetch('https://free.currencyconverterapi.com/api/v5/currencies')
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
-        console.log(json);
-        // const oneToTwo = c1 + "_" + c2;
-        // const twoToOne = c2 + "_" + c1;
-        // dispatch(fetchCurrenciesSuccess(json.products))
+        dispatch(fetchCurrenciesSuccess(Object.keys(json.results).sort()));
     })
     .catch(error => dispatch(fetchCurrenciesError(error)));
   };
