@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import Root from './components/root';
 import rootReducer from './reducers/rootReducer';
-
+import { fetchCurrenciesSuccess } from "./actions/curr_actions";
 // import App from './components/app';
 // import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+// const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 document.addEventListener('DOMContentLoaded', () => {
   // const preloadedState = {
@@ -20,8 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = createStore(
     rootReducer,
     // preloadedState,
-    applyMiddleware()
+    applyMiddleware(thunk, logger)
   );
+
+  window.fetchCurrenciesSuccess = fetchCurrenciesSuccess;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
 
   const root = document.getElementById('converter');
   ReactDOM.render(<Root store={ store }/>, root);

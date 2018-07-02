@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-
+import { connect } from "react-redux";
+import { fetchCurrencies } from "../actions/curr_actions";
 import CurrencyDropdown from './CurrencyDropdown';
 
-export default class CurrencyWidget extends Component {
+class CurrencyWidget extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +23,8 @@ export default class CurrencyWidget extends Component {
   componentDidMount() {
     const first = this.state.currencyType1;
     const second = this.state.currencyType2;
-
     this.getRates(first, second);
+
   }
 
   getRates(curr1, curr2) {
@@ -114,3 +115,11 @@ export default class CurrencyWidget extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  curr: state.currencies.curr,
+  loading: state.currencies.loading,
+  error: state.currencies.error
+});
+
+export default connect(mapStateToProps)(CurrencyWidget);
