@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const dropdown = function({ currencies }) {
-  return currencies.map((curr, idx) => <option key={idx} value={curr}>{curr}</option>);
+  const currObj = Object.keys(currencies).sort();
+  return currObj.map((curr, idx) => <option key={idx} value={currencies[curr]}>{curr}</option>);
 };
 
 

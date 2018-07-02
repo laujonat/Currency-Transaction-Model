@@ -26,11 +26,11 @@ export function fetchCurrencies() {
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
+        const currencies = {};
         const currencyName = Object.values(json.results).forEach(el => {
-          console.log(el);
+          currencies[el.currencyName] = el.id;
         });
-        console.log(currencyName);
-        dispatch(fetchCurrenciesSuccess(Object.keys(json.results).sort()));
+        dispatch(fetchCurrenciesSuccess(currencies));
     })
     .catch(error => dispatch(fetchCurrenciesError(error)));
   };
