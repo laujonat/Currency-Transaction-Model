@@ -42,6 +42,7 @@ export default class CurrencyWidget extends Component {
   currencyChange(field) {
     return (
       (e) => {
+        e.preventDefault();
         this.setState({ [field]: e.target.value}, () => {
           console.log(this.state);
           // dispatch action
@@ -69,18 +70,11 @@ export default class CurrencyWidget extends Component {
 
     return (
       (e) => {
-        // const calc = e.target.value * this.state[`rate${field}To${other}`];
-        console.log(rate);
-        console.log(rate);
-        // this.setState({
-        //   [`currencyAmount${field}`]: e.target.value,
-        //   [`currencyAmount${other}`]: calc
-        // }, () => {
-        //   console.log(this.state);
-        //   // dispatch action
-        //   // return back is conversion rate
-        //   // do calculation from currencyAmount1 to currencyAmount2
-        // });
+        e.preventDefault();
+        this.setState({
+          [from]: e.target.value,
+          [to]: e.target.value * rate
+        }, () => console.log(this.state));
       }
     );
   }
