@@ -31,8 +31,8 @@ export function fetchCurrencies() {
           currencies[el.currencyName] = el.id;
         });
         dispatch(fetchCurrenciesSuccess(currencies));
-    })
-    .catch(error => dispatch(fetchCurrenciesError(error)));
+      })
+      .catch(error => dispatch(fetchCurrenciesError(error)));
   };
 }
 
