@@ -5,12 +5,9 @@ import configureStore from 'redux-mock-store'; // Smart components
 
 import CurrencyWidget from '../../src/components/CurrencyWidget';
 
-
 describe('<CurrencyWidget />', () => {
-  describe('render()', () => {
-    test('renders currency widget', () => {
-      const wrapper = shallow(<CurrencyWidget />);
-      expect(wrapper.exists()).toBe(true);
-    });
+  it('renders currency widget', () => {
+    const wrapper = shallow(<CurrencyWidget />);
+    expect(wrapper.exists()).toBe(true);
   });
 });
