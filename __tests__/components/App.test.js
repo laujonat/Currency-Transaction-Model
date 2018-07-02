@@ -7,7 +7,7 @@ import App from '../../src/components/app';
 import CurrencyWidget from '../../src/components/CurrencyWidget';
 
 describe('<App />', () => {
-  it('renders two currency widgets', () => {
+  it('renders two <CurrencyWidget /> components', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find(CurrencyWidget)).toHaveLength(2);
   });

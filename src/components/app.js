@@ -4,8 +4,10 @@ import CurrencyWidget from './CurrencyWidget';
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter
-
+      <div>
+        <h1>HI JON</h1>
+        <CurrencyWidget />
+        <CurrencyWidget />
       </div>
     );
   }
