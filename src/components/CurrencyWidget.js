@@ -116,10 +116,4 @@ class CurrencyWidget extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  curr: state.currencies.curr,
-  loading: state.currencies.loading,
-  error: state.currencies.error
-});
-
-export default connect(mapStateToProps)(CurrencyWidget);
+export default CurrencyWidget;
