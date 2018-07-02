@@ -12,8 +12,14 @@ import rootReducer from './reducers/rootReducer';
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 document.addEventListener('DOMContentLoaded', () => {
+  // const preloadedState = {
+  //   person1: Math.random(100),
+  //   person2: Math.random(100)
+  // };
+
   const store = createStore(
     rootReducer,
+    // preloadedState,
     applyMiddleware()
   );
 
