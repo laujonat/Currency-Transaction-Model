@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import Root from './components/root';
 import rootReducer from './reducers/rootReducer';
 import { fetchCurrencies } from "./actions/curr_actions";
+import { fillUserWallet } from "./actions/user_actions";
 
 // const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyMiddleware(thunk, logger)
   );
   store.dispatch(fetchCurrencies());
+  store.dispatch(fillUserWallet());
   window.fetchCurrencies = fetchCurrencies;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
