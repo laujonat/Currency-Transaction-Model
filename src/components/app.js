@@ -5,9 +5,10 @@ import User from './UserComponent';
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <User id={"userA"}/>
-      </div>
+        <User id={"userB"}/>
+      </React.Fragment>
     );
   }
 }
