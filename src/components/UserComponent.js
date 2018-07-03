@@ -9,10 +9,10 @@ class User extends Component {
 
   render() {
     return (
-      <React.Fragment>
-      <span>Wallet: {this.props.walletAmt}</span>
-      <CurrencyWidget user={this.props.userName}/>
-      </React.Fragment>
+      <div className="widgetContainer">
+        <span>Wallet: {this.props.walletAmt}</span>
+        <CurrencyWidget user={this.props.userName}/>
+      </div>
     );
   }
 }
