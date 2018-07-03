@@ -13,11 +13,14 @@ const userReducer = (state = initialState, action) => {
     case FETCH_USER_WALLET:
       return state;
     case SEND_USER_FUNDS:
-      const sendingUser = action.fromUser;
-      let newWallet = state[sendingUser] - action.amt;
+      const fromUser = action.fromUser;
+      const toUser = action.toUser;
+      let amt = Number(action.amt);
+
       return {
         ...state,
-        [sendingUser]: newWallet
+        [fromUser]: state[fromUser] - amt,
+        [toUser]: state[toUser] + amt
       }
     default:
       return state;
