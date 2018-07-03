@@ -11,6 +11,11 @@ body {
   justify-content: space-around;
 }
 
+.widgetContainer {
+  dislay: flex;
+  flex-direction: column;
+}
+
 form {
   width: auto;
   height: 20vh;

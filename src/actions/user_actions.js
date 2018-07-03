@@ -14,7 +14,7 @@ export const sendFunds = (amt, fromUser) => ({
 
 export function fillUserWallet() {
   return dispatch => {
-      dispatch(fillWallets());
+    dispatch(fillWallets());
   };
 }
 
