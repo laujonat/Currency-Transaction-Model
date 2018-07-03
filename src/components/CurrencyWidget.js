@@ -31,9 +31,8 @@ class CurrencyWidget extends Component {
 
   send(e) {
     e.preventDefault();
-    const fromUser = this.props.user === 'userA' ? 'userA' : 'userB';
-    const amtToSend = this.state.currencyAmount1;
-    this.props.dispatch(sendUserFunds(amtToSend, fromUser));
+    let amt = this.state.currencyAmount1;
+    this.props.dispatch(sendUserFunds(amt, this.props.user));
   }
 
 

@@ -1,4 +1,4 @@
-# TDD Transactional Currencies 
+# TDD Transactional Currencies
 ### IN PROGRESS!
 
 # Objective
@@ -10,7 +10,7 @@
 + CurrencyConverterAPI for real time rates
 
 
-<center><img src="https://i.imgur.com/OPylSoX.png"></center>
+<center><img src="https://i.imgur.com/90BC5Rx.png"></center>
 
 ```
 > npm install
