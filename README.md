@@ -1,8 +1,8 @@
-# Test Driven Development Currency Conversion Project
+# TDD Transactional Currencies 
 ### IN PROGRESS!
 
-# Introduction
-- Currency conversion application developed in a test driven environment. Allow synthetic users to send/receive funds in a chosen currency.  Currency will be converted based on chosen currency type.  
+# Objective
+- Model transactions between various currency types developed in a test driven environment with Enzyme/Jest. Allow synthetic users to send/receive funds in a chosen currency.
 
 ## Technologies
 + Enzyme/Jest testing library
