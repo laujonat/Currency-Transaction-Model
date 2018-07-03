@@ -2,10 +2,16 @@ body {
   background: linear-gradient(rgb(15, 98, 189) 24%, rgb(10, 64, 122) 168%);
   width: 100vw;
   height: 100vh;
+  margin-top: 25vh;
+}
+
+#converter {
+  display: flex;
+  justify-content: space-around;
 }
 
 form {
-  width: 500px;
+  width: auto;
   height: 20vh;
   margin: auto;
   background-color: white;
