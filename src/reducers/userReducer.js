@@ -17,7 +17,7 @@ const userReducer = (state = initialState, action) => {
       let newWallet = state[sendingUser] - action.amt;
       return {
         ...state,
-        // state[sendingUser]: newAmt
+        [sendingUser]: newWallet
       }
     default:
       return state;
