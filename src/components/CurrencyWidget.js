@@ -23,8 +23,8 @@ class CurrencyWidget extends Component {
   componentDidMount() {
     const first = this.state.currencyType1;
     const second = this.state.currencyType2;
-    this.getRates(first, second);
 
+    this.getRates(first, second);
   }
 
   getRates(c1, c2) {
@@ -85,6 +85,7 @@ class CurrencyWidget extends Component {
     return (
       <form>
         <span>1 {this.state.currencyType1} is equal to {this.state.rate1To2} {this.state.currencyType2}.</span>
+        <span>{this.props.user}</span>
         <div className="inputSection">
           <input
             type='number'
@@ -117,4 +118,8 @@ class CurrencyWidget extends Component {
   }
 }
 
-export default CurrencyWidget;
+const mapStateToProps = (state, ownProps) => ({
+  user: state.users[ownProps.user]
+});
+
+export default connect(mapStateToProps)(CurrencyWidget);

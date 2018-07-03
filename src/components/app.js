@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import CurrencyWidget from './CurrencyWidget';
+// import CurrencyWidget from './CurrencyWidget';
+import User from './UserComponent';
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <CurrencyWidget />
+        <User id={"userA"}/>
       </div>
     );
   }
