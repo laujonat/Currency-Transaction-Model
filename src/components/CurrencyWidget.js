@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { fetchCurrencies } from "../actions/curr_actions";
+import { sendUserFunds } from "../actions/user_actions";
 import CurrencyDropdown from './CurrencyDropdown';
 
 class CurrencyWidget extends Component {
@@ -18,6 +19,7 @@ class CurrencyWidget extends Component {
     this.amountChange = this.amountChange.bind(this);
     this.currencyChange = this.currencyChange.bind(this);
     this.getRates = this.getRates.bind(this);
+    this.send = this.send.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +28,14 @@ class CurrencyWidget extends Component {
 
     this.getRates(first, second);
   }
+
+  send(e) {
+    e.preventDefault();
+    const fromUser = this.props.user === 'userA' ? 'userA' : 'userB';
+    const amtToSend = this.state.currencyAmount1;
+    this.props.dispatch(sendUserFunds(amtToSend, fromUser));
+  }
+
 
   getRates(c1, c2) {
     const host = 'http://free.currencyconverterapi.com/';
@@ -84,7 +94,6 @@ class CurrencyWidget extends Component {
 
     return (
       <form>
-        <span>Wallet amt: {this.props.walletAmt}</span>
         <span>1 {this.state.currencyType1} is equal to {this.state.rate1To2} {this.state.currencyType2}.</span>
         <div className="inputSection">
           <input
@@ -112,7 +121,7 @@ class CurrencyWidget extends Component {
             value={this.state.currencyType2}
           >{dropdown}</select>
         </div>
-        <button>fly birdie fly</button>
+        <button onClick={this.send}>send</button>
       </form>
     );
   }
