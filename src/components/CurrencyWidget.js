@@ -35,7 +35,6 @@ class CurrencyWidget extends Component {
     this.props.dispatch(sendUserFunds(amt, this.props.user));
   }
 
-
   getRates(c1, c2) {
     const host = 'http://free.currencyconverterapi.com/';
 
