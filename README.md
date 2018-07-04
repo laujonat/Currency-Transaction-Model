@@ -16,3 +16,8 @@
 > npm install
 > npm start
 ```
+
+
+## ToDos:
+- UserComponent > line 12 > rename <div> class
+- CurrencyWidget > if (currencyAmount1 > walletAmt) throw error
