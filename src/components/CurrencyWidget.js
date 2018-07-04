@@ -94,6 +94,7 @@ class CurrencyWidget extends Component {
     return (
       <form>
         <span>1 {this.state.currencyType1} is equal to {this.state.rate1To2} {this.state.currencyType2}.</span>
+
         <div className="inputSection">
           <input
             type='number'
@@ -107,6 +108,7 @@ class CurrencyWidget extends Component {
             value={this.state.currencyType1}
           >{dropdown}</select>
         </div>
+
         <div className="inputSection">
           <input
             type='number'
@@ -120,6 +122,7 @@ class CurrencyWidget extends Component {
             value={this.state.currencyType2}
           >{dropdown}</select>
         </div>
+
         <button onClick={this.send}>send</button>
       </form>
     );
