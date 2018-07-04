@@ -3,16 +3,16 @@ body {
   font-family: 'Courier New';
   width: 100vw;
   height: 100vh;
-  margin-top: 25vh;
 }
 
 #converter {
+  margin-top: 25vh;
   display: flex;
   justify-content: space-around;
 }
 
 .widgetContainer {
-  dislay: flex;
+  display: flex;
   flex-direction: column;
 }
 
