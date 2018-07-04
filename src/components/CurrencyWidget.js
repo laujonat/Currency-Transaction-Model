@@ -32,6 +32,7 @@ class CurrencyWidget extends Component {
   send(e) {
     e.preventDefault();
     let amt = this.state.currencyAmount1;
+    console.log(this.props);
     this.props.dispatch(sendUserFunds(amt, this.props.user));
   }
 
@@ -59,14 +60,27 @@ class CurrencyWidget extends Component {
     let to;
     let rate;
 
-    if (field === '1') {
-      from = 'currencyAmount1';
-      to = 'currencyAmount2';
-      rate = this.state.rate1To2;
-    } else {
-      from = 'currencyAmount2';
-      to = 'currencyAmount1';
-      rate = this.state.rate2To1;
+    // if (field === '1') {
+    //   from = 'currencyAmount1';
+    //   to = 'currencyAmount2';
+    //   rate = this.state.rate1To2;
+    // } else {
+    //   from = 'currencyAmount2';
+    //   to = 'currencyAmount1';
+    //   rate = this.state.rate2To1;
+    // }
+
+    switch(field) {
+      case '1':
+        from = 'currencyAmount1';
+        to = 'currencyAmount2';
+        rate = this.state.rate1To2;
+        break;
+      case '2':
+        from = 'currencyAmount2';
+        to = 'currencyAmount1';
+        rate = this.state.rate2To1;
+        break;
     }
 
     return (
