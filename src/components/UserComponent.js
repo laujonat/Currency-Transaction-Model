@@ -9,7 +9,7 @@ class User extends Component {
 
   render() {
     return (
-      <div className="widgetContainer">
+      <div className="componentContainer">
         <span>{this.props.userName} has {this.props.walletAmt} jonCoins.</span>
         <CurrencyWidget user={this.props.userName}/>
       </div>
