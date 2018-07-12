@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import CurrencyWidget from './CurrencyWidget';
+import HistoryItem from './HistoryItem';
 
 // this component has not been implemented to the actual project.
 
@@ -14,6 +15,9 @@ class TransactionHistory extends Component {
 
 
   render() {
+    const { transactions } = this.props.history;
+
+
     return (
       <div>Hi</div>
     );
