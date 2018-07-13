@@ -5,7 +5,7 @@ import HistoryItem from './HistoryItem';
 
 // this component has not been implemented to the actual project.
 
-class TransactionHistory extends Component {
+class History extends Component {
   constructor(props) {
     super(props);
   }
@@ -29,4 +29,4 @@ const mapStateToProps = (state, ownProps) => ({
   history: state.history
 });
 
-export default connect(mapStateToProps)(TransactionHistory);
+export default connect(mapStateToProps)(History);
