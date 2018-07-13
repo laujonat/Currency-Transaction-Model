@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import CurrencyWidget from './CurrencyWidget';
+import HistoryItem from './HistoryItem';
 
 // this component has not been implemented to the actual project.
 
 class TransactionHistory extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
   }
 
-
   render() {
+    const entries = this.props.history;
+    console.log("entries", this.props, entries);
+
+    const list = entries.map((t, i) => <HistoryItem transaction={t} idx={i} />);
+
     return (
-      <div>Hi</div>
+      <ul>
+        { list }
+      </ul>
     );
   }
 
@@ -24,7 +28,5 @@ class TransactionHistory extends Component {
 const mapStateToProps = (state, ownProps) => ({
   history: state.history
 });
-
-// state.history doesn't exist yet.
 
 export default connect(mapStateToProps)(TransactionHistory);
