@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CurrencyWidget from './CurrencyWidget';
+import HistoryComponent from './HistoryComponent';
 
 class User extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class User extends Component {
       <div className="componentContainer">
         <span>{ name } has {this.props.walletAmt} borkCoins.</span>
         <CurrencyWidget user={ userName }/>
+        <HistoryComponent />
       </div>
     );
   }
