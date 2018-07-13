@@ -8,18 +8,18 @@ import HistoryItem from './HistoryItem';
 class TransactionHistory extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
   }
 
-
   render() {
-    const { transactions } = this.props.history;
+    const entries = this.props.history;
+    console.log("entries", this.props, entries);
 
+    const list = entries.map((t, i) => <HistoryItem transaction={t} idx={i} />);
 
     return (
-      <div>Hi</div>
+      <ul>
+        { list }
+      </ul>
     );
   }
 
@@ -28,7 +28,5 @@ class TransactionHistory extends Component {
 const mapStateToProps = (state, ownProps) => ({
   history: state.history
 });
-
-// state.history doesn't exist yet.
 
 export default connect(mapStateToProps)(TransactionHistory);
