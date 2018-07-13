@@ -1,5 +1,10 @@
-export default function(transaction) {
+import React from 'react';
+
+export default function({ transaction, idx }) {
+  console.log(transaction, idx);
   return(
-    <p>{transaction.from} sent {transaction.to} {transaction.amount}.</p>
+    <li key={idx} >
+      {transaction.from} sent {transaction.to} {transaction.amount}.
+    </li>
   );
 }
