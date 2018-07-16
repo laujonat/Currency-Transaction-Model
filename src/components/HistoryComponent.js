@@ -12,8 +12,6 @@ class History extends Component {
 
   render() {
     const entries = this.props.history;
-    console.log("entries", this.props, entries);
-
     const list = entries.map((t, i) => <HistoryItem transaction={t} idx={i} />);
 
     return (
@@ -26,7 +24,8 @@ class History extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  history: state.history
+  history: state.history,
+  state: state
 });
 
 export default connect(mapStateToProps)(History);

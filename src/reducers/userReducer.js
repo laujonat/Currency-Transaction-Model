@@ -2,10 +2,11 @@ import {
   FETCH_USER_WALLET,
   SEND_USER_FUNDS
 } from '../actions/user_actions';
+import { names } from './selectors';
 
 const initialState = {
-  userA: Math.floor((Math.random() * 100) + 50),
-  userB: Math.floor((Math.random() * 100) + 50),
+  [names['userA']]: Math.floor((Math.random() * 100) + 50),
+  [names['userB']]: Math.floor((Math.random() * 100) + 50),
 };
 
 const userReducer = (state = initialState, action) => {

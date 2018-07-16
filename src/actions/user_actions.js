@@ -1,3 +1,5 @@
+import { names } from '../reducers/selectors';
+
 export const FETCH_USER_WALLET = 'FETCH_USER_WALLET';
 export const SEND_USER_FUNDS = 'SEND_USER_FUNDS';
 
@@ -19,8 +21,8 @@ export function fillUserWallet() {
 }
 
 export function sendUserFunds(amt, fromUser) {
-  let toUser = fromUser === 'userA' ? 'userB' : 'userA';
-  
+  let toUser = fromUser === names['userA'] ? names['userB'] : names['userA'];
+
   return dispatch => {
     dispatch(sendFunds(amt, fromUser, toUser));
   };

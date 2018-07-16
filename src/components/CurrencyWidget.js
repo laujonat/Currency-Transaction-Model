@@ -32,7 +32,6 @@ class CurrencyWidget extends Component {
   send(e) {
     e.preventDefault();
     let amt = this.state.currencyAmount1;
-    console.log(this.props);
     this.props.dispatch(sendUserFunds(amt, this.props.user));
   }
 
@@ -51,7 +50,7 @@ class CurrencyWidget extends Component {
           rate1To2: json[oneToTwo],
           rate2To1: json[twoToOne],
           currencyAmount2: this.state.currencyAmount1 * json[oneToTwo]
-        }, () => console.log(this.state));
+        });
       });
   }
 
@@ -59,16 +58,6 @@ class CurrencyWidget extends Component {
     let from;
     let to;
     let rate;
-
-    // if (field === '1') {
-    //   from = 'currencyAmount1';
-    //   to = 'currencyAmount2';
-    //   rate = this.state.rate1To2;
-    // } else {
-    //   from = 'currencyAmount2';
-    //   to = 'currencyAmount1';
-    //   rate = this.state.rate2To1;
-    // }
 
     switch(field) {
       case '1':
@@ -89,7 +78,7 @@ class CurrencyWidget extends Component {
         this.setState({
           [from]: e.target.value,
           [to]: e.target.value * rate
-        }, () => console.log(this.state));
+        });
       }
     );
   }
