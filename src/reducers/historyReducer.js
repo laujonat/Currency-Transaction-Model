@@ -1,12 +1,12 @@
-// import { } from '../actions/history_actions'; // does not exist
+import { names } from './selectors';
 import {
   SEND_USER_FUNDS
 } from '../actions/user_actions';
 
 const initialState = [
   {
-    from: 'userA',
-    to: 'userB',
+    from: names['userA'],
+    to: names['userB'],
     amount: 100
   }
 ];
