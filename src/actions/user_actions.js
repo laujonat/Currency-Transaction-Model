@@ -3,9 +3,10 @@ import { names } from '../reducers/selectors';
 export const FETCH_USER_WALLET = 'FETCH_USER_WALLET';
 export const SEND_USER_FUNDS = 'SEND_USER_FUNDS';
 
-export const fillWallets = () => ({
-  type: FETCH_USER_WALLET,
-});
+// may use later?
+// export const fillWallets = () => ({
+//   type: FETCH_USER_WALLET,
+// });
 
 export const sendFunds = (amt, fromUser, toUser) => ({
   type: SEND_USER_FUNDS,
@@ -13,12 +14,6 @@ export const sendFunds = (amt, fromUser, toUser) => ({
   fromUser,
   toUser
 });
-
-export function fillUserWallet() {
-  return dispatch => {
-    dispatch(fillWallets());
-  };
-}
 
 export function sendUserFunds(amt, fromUser) {
   let toUser = fromUser === names['userA'] ? names['userB'] : names['userA'];
