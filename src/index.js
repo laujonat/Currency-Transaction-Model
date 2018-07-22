@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     applyMiddleware(thunk, logger)
   );
   store.dispatch(fetchCurrencies());
-  store.dispatch(fillUserWallet());
 
   /** TESTING **/
   window.fetchCurrencies = fetchCurrencies;
