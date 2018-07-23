@@ -7,6 +7,7 @@ import HistoryComponent from './HistoryComponent';
 class User extends Component {
   constructor(props) {
     super(props);
+
   }
 
   render() {
