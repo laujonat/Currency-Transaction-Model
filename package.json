@@ -8,8 +8,7 @@
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint --fix",
-    "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\""
+    "lint": "./node_modules/.bin/eslint ./"
   },
   "author": "",
   "license": "ISC",
