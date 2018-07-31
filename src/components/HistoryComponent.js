@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import CurrencyWidget from './CurrencyWidget';
 import HistoryItem from './HistoryItem';
 
@@ -20,12 +20,11 @@ class History extends Component {
       </ul>
     );
   }
-
 }
 
 const mapStateToProps = (state, ownProps) => ({
   history: state.history,
-  state: state
+  state,
 });
 
 export default connect(mapStateToProps)(History);

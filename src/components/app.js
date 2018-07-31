@@ -7,8 +7,8 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <User id={names['userA']}/>
-        <User id={names['userB']}/>
+        <User id={names.userA} />
+        <User id={names.userB} />
       </React.Fragment>
     );
   }

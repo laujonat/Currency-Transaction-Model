@@ -7,7 +7,6 @@ import HistoryComponent from './HistoryComponent';
 class User extends Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -15,8 +14,16 @@ class User extends Component {
 
     return (
       <div className="componentContainer">
-        <span>{ userName } has {this.props.walletAmt} borkCoins.</span>
-        <CurrencyWidget user={ userName }/>
+        <span>
+          { userName }
+          {' '}
+has
+          {' '}
+          {this.props.walletAmt}
+          {' '}
+borkCoins.
+        </span>
+        <CurrencyWidget user={userName} />
         <HistoryComponent />
       </div>
     );
@@ -25,7 +32,7 @@ class User extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   walletAmt: state.users[ownProps.id],
-  userName: ownProps.id
+  userName: ownProps.id,
 });
 
 export default connect(mapStateToProps)(User);

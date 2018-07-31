@@ -12,13 +12,13 @@ export const sendFunds = (amt, fromUser, toUser) => ({
   type: SEND_USER_FUNDS,
   amt,
   fromUser,
-  toUser
+  toUser,
 });
 
 export function sendUserFunds(amt, fromUser) {
-  let toUser = fromUser === names['userA'] ? names['userB'] : names['userA'];
+  const toUser = fromUser === names.userA ? names.userB : names.userA;
 
-  return dispatch => {
+  return (dispatch) => {
     dispatch(sendFunds(amt, fromUser, toUser));
   };
 }
