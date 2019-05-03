@@ -1,4 +1,7 @@
 # TDD Transactional Currencies
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/laujonat/Currency-Transaction-Model.svg)](https://greenkeeper.io/)
+
 ### IN PROGRESS!
 
 # Objective
